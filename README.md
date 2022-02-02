@@ -1,3 +1,3 @@
 # PyTools
 
-This is the Python scripts for pre- and post-processing related to ICON(-ART) 
+This is the collection of Python scripts for pre- and post-processing related to ICON(-ART).
