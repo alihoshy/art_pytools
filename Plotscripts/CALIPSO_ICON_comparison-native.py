@@ -35,6 +35,10 @@ calipso_data     = ''
 icon_data        = ''
 icon_grid        = '' 
 plotpath         = ''
+#-- if icon data includes different time steps
+i_step           = 0
+
+
 #-- if z_ifc should be loaded from a different file (optional)
 z_ifc_data       = ''
 
@@ -239,6 +243,11 @@ def cut_data(data, start, end, lons, lats, cuttype):
     return new_data, lons[index], lats[index], index
 
 def distance(origin, destination):
+    """
+    This function computes the distance of a location (lon & lat, here: origin)
+    to another location (destination) or a set of lats & lons.
+    Unit: km.
+    """
     lon1, lat1 = origin
     lon2, lat2 = destination
     radius = 6371 # km
@@ -251,8 +260,6 @@ def distance(origin, destination):
     d = radius * c
 
     return d
-
-
 
 
 #-- prepare CALIOP data
@@ -369,8 +376,10 @@ except  KeyError:
 
 ds_icon  =  ds_icon[icon_var]  
   
-if ds_icon.dims[0]== 'time':                                                            #-- check if 'time' is a dimension in the dataset 
+if 'time' in ds_icon.coords:                                                            #-- check if 'time' is a dimension in the dataset 
   ds_icon = ds_icon.isel(time=0)                                                        #-- if so, remove the dimension
+if 'step' in ds_icon.coords:                                                            #-- check if 'step' is a dimension in the dataset
+  ds_icon = ds_icon.isel(step=i_step)                                                   #-- if so, chose time step
 
 
 lat_icon     = np.array(xr.open_dataset(icon_grid)["clat"]) * 180.0/np.pi               #-- get latidues from gridfile
