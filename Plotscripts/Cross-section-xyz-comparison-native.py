@@ -3,7 +3,7 @@
  Description:
  Python script to visualize a cross section along a defined xy path.
  This script focuses on ICON data on native grid.
- A path xyz can be vizalized as well as external data on xyz.   
+ A path xyz can be visualized as well as external data on xyz.   
 
  Valid data types: NetCDF, GRIB
  There may be warnings when reading GRIB data, which can be ignored.
