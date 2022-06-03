@@ -34,7 +34,8 @@ nlevs            = 25                   #-- number of levels on colorbar
 plottitle        = ''                   #-- plot title
 fs               = 10                   #-- fontsize
 dpi              = 200                  #-- resolution of plot
-n_ticks          = 6                    #-- number of latitude/longitude ticks in plot
+n_lons           = 9                    #-- number of ticks along longitudes 
+n_lats           = 7                    #-- number of ticks along latitudes
 cbar_col         = 'Spectral_r'         #-- colorbar
 crs_data         = ccrs.PlateCarree()   #-- projection
 
@@ -147,8 +148,6 @@ ax.add_feature(cfeature.BORDERS, lw=0.3)                                        
 ax.add_collection(coll)                                                          #-- add triangles (data) 
 
 #-- add lat lon ticks
-n_lons = 9                                                                       #-- number of ticks along longitudes 
-n_lats = 7                                                                       #-- number of ticks along latitudes
 lon_ticks   = np.linspace(np.min(vlon), np.max(vlon), n_lons)                    #-- create lon ticks array 
 lat_ticks   = np.linspace(np.min(vlat), np.max(vlat), n_lats)                    #-- create lat ticks array
 lon_labels  = np.array(['{0:.{1}f}'.format(x,1)+'$^\circ$' for x in lon_ticks])  #-- create string array, round to one decimal (lon labels)

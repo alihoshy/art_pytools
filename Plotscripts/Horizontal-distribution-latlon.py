@@ -29,10 +29,11 @@ plotname         = ''                   #-- plot file name
 #varmin           =                     #-- Min value on colorbar (optional)
 #varmax           =                     #-- Max value on colorbar (optional)
 nlevs            = 25                   #-- number of levels on colorbar
-plottitle        = 'test'                   #-- plot title
+plottitle        = ''                   #-- plot title
 fs               = 10                   #-- fontsize
 dpi              = 200                  #-- resolution of plot
-n_ticks          = 6                    #-- number of latitude/longitude ticks in plot
+n_lons           = 9                    #-- number of ticks along longitudes
+n_lats           = 7                    #-- number of ticks along latitudes
 cbar_col         = 'Spectral_r'         #-- colorbar
 crs_data         = ccrs.PlateCarree()   #-- projection
 lons             = [-180, 180]          #-- min and max lon
@@ -112,8 +113,6 @@ ax.add_feature(cfeature.BORDERS, lw=0.3)                                        
 im =data.plot(norm=norm, cmap=cmap, add_colorbar=False)                          #-- plot data
 
 #-- add lat lon ticks
-n_lons = 9                                                                       #-- number of ticks along longitudes
-n_lats = 7                                                                       #-- number of ticks along latitudes
 lon_ticks   = np.linspace(np.min(lons), np.max(lons), n_lons)                    #-- create lon ticks array
 lat_ticks   = np.linspace(np.min(lats), np.max(lats), n_lats)                    #-- create lat ticks array
 lon_labels  = np.array(['{0:.{1}f}'.format(x,1)+'$^\circ$' for x in lon_ticks])  #-- create string array, round to one decimal (lon labels)
