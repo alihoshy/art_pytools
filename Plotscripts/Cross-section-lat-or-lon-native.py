@@ -218,7 +218,7 @@ if not heightinfo == None:
   ax1.set_yticks(yticks)                                                                 #-- set a altitude yticks
   ytick_lab =  ['{0:.{1}f}'.format(x,1) for x in yticks]
   ax1.set_yticklabels(ytick_lab, fontsize=fs)          #-- add altitude labels 
-  ax1.set_ylabel('Altitude (km)', fontsize=fs)                                           #-- add a-axis label 
+  ax1.set_ylabel('Altitude (km)', fontsize=fs)                                           #-- add y-axis label 
   ax1.set_ylim(alt_plot)                                                                 #-- set limits of y-axis
 
 #-- title
