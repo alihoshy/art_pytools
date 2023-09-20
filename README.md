@@ -1,6 +1,6 @@
 # PyTools
 
-This is the collection of Python scripts for pre- and post-processing related to ICON(-ART).
+This is the collection of Python scripts for pre- and post-processing related to [ICON-ART](https://www.icon-art.kit.edu/) model.
 
 * [Plotscripts](./Plotscripts):
 Scripts that can be executed or submitted as jobs on Mistral. It is recommended to use the latest Python module (python3/unstable). Scripts can also be used on other HPC systems if the required Python modules are installed. 
