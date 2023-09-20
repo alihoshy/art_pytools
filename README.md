@@ -16,7 +16,7 @@ If you want to make a modification to an existing script or upload your own scri
 # Working with the repository
 To start working with this repository please `git clone` the repository
 ```bash
-git clone https://gitlab.dkrz.de/art/pytools.git
+git clone  https://github.com/alihoshy/art_pytools.git
 ```
 
 In case you have set up an ssh key, you can `git clone` via
